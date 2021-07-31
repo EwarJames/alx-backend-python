@@ -18,6 +18,6 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
     for i in range(n):
         initial_delays.append(wait_random(max_delay))
     for initial_delay in asyncio.as_completed(initial_delays):
-        initial = await delay
+        initial = await initial_delay
         all_delays.append(initial)
     return all_delays
